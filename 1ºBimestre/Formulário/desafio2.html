@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend> Questionario </legend>
+        <fieldset>
+            
+            <legend> Cadastro </legend>
+                <label for="email"> E-mail: </label>
+        <input
+            type="text"
+            id="email"
+            name="email"
+            />
+            <br>
+            <br>
+            <label for="senha"> Senha: </label>
+            <input
+            type="text"
+            id="senha"
+            name="senha"
+            />
+    </fieldset>
+
+    <br>
+    <fieldset>
+        <legend> Dados Pessoais </legend>
+        <label for="Nome"> Nome: </label>
+        <input
+        type="text"
+        id="nome"
+        name="nome"
+        />
+
+        <br>
+        <br>
+
+        <label for="Idade"> Idade: </label>
+        <input
+        type="number"
+        id="idade"
+        name="idade"
+        />
+
+        <br>
+        <br>
+
+        <label for="Telefone"> Telefone: </label>
+        <input
+        type="tel"
+        id="telefone"
+        name="telefone"
+        />
+
+        <br>
+        <br>
+
+        <label for="Data de nascimento"> Data de nascimento: </label>
+        <input
+        type="date"
+        id="nascimento"
+        name="nascimento"
+        />
+
+        <br>
+        <br>
+
+        <label for="Gênero"> Gênero: </label>
+        <input type="radio" id="Masculino" name="masculino">
+        <label for="Masculino"> Masculino </label>
+        <input type="radio" id="Feminino" name="feminino">
+        <label for="Feminino"> Feminino </label>
+        <input type="radio" id="Outros" name="outros">
+        <label for="Outros"> Outros </label>
+        <input type="radio" id="Prefiro não responder" name="prefiro não responder">
+        <label for="Prefiro não responder"> Prefiro não responder </label>
+
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend> Preferências </legend>
+        <label for="Marca"> Marca de celular que você usa: </label>
+        <select id="Celular" name="celular">
+            <option value="opção"> Escolha uma opção </option> 
+            <option value="samsung"> Samsung</option>
+            <option value="iphone"> Iphone</option>
+            <option value="motorola"> Motorola</option>
+            <option value="xiaomi"> Xiaomi</option>
+        </select>
+        <br>
+        <br>
+        <label for="navegador"> Escolha um navegador que você usa: </label>
+        <input list="navegador">
+        <datalist id="navegador">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Opera">
+            <option value="Edge">
+
+        </datalist>
+        </select>
+        <br>
+        <br>
+
+        <label for="musica"> Escolha os ritmos musicais que você escuta: </label>
+        <input type="checkbox" id="rock" name="musicas" value="rock">
+        <label for="rock"> Rock </label>
+        <input type="checkbox" id="mpb" name="musicas" value="mpb">
+        <label for="mpb"> MPB </label>
+        <input type="checkbox" id="pop" name="musicas" value="pop">
+        <label for="pop"> Pop </label>
+        <input type="checkbox" id="samba" name="musicas" value="samba">
+        <label for="samba"> Samba </label>
+    </fieldset>
+    <br>
+
+    <fieldset> 
+        <legend> Comentário </legend>
+        <textarea id="descricao" name="descricao" rows="4" cols="50">
+            Digite um comentário...
+        </textarea>
+        <br>
+        <br>
+        <button type="reset"> Resetar </button>
+        <button type="enviar"> Enviar </button>
+    </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.item1 {
+    background-image: linear-gradient(to right, pink, purple);
+}
+.item2 {
+    background: radial-gradient(circle, rgb(210, 210, 231) 0%, rgb(243, 191, 243) 100%)
+}
+.h5 {
+    background: linear-gradient(to right, red, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+}

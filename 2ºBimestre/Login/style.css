@@ -1,0 +1,105 @@
+
+.body{
+    font-family: 'Comfortaa', cursive;
+    background-image: linear-gradient(rgb(202, 127, 231), rgb(233, 193, 233));
+    background-attachment: fixed;
+ }
+
+ .main{
+    background-color: black;
+    position: relative;
+    top: 1vh;
+    left: 1vw;
+    height: 98vh;
+    width: 98vw;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+ }
+
+ .Titulo{
+   font-size: 2vw;
+   color: rgb(234, 198, 232);
+}
+
+.esquerda {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 50vw;
+   height: 100vh;
+   flex-direction: column;
+}
+
+img{
+   height: 60vh;
+   width: 45vw;
+}
+
+.direita {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 50vw;
+   height: 100vh;
+   flex-direction: column;
+}
+
+form{
+   background-color: #e9b3cc;
+   padding: 5vh;
+   border-radius: 20px;
+   height: 50vh;
+   width: 15vw;
+   color: white;
+}
+
+.Login{
+   margin: 0;
+   font-size: 6vh;
+   text-align: center;
+   background: linear-gradient(to left, rgb(57, 55, 55) , rgb(121, 110, 117));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+label{
+   font-size: 3vh;
+   display: block;
+   margin-top: 4vh;
+   margin-bottom: 1vh;
+}
+
+input[type="nomes"], input[type="senhas"]{
+   width: 90%;
+   font-size: 3vh;
+   padding: 10px;
+   margin: 0 auto;
+   border-radius: 10px;
+}
+
+input[type="submit"]{
+   display: block;
+   width: 70%;
+   font-size: 2vh;
+   margin: 0 auto;
+   margin-top: 2vh;
+   margin-bottom: 1vh;
+   padding: 1.5vh 0;
+   background: linear-gradient(to right, rgb(236, 98, 229) , rgb(201, 105, 164));
+   border-radius: 10px;
+   text-align: center;
+}
+
+@media screen and (max-width: 600px){
+   main{
+       flex-direction: column;
+       height: 80%;
+       margin-bottom: 2vh;
+   }
+   
+   form{
+       width: 50vw;
+   }
+}

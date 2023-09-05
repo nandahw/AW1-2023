@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha</title>
+</head>
+<body>
+    <form>
+        <label for="senha"> Senha </label>
+        <input type="password" id="Senha" name="senha">
+        <label for="ConfirmarSenha"> Confirme sua senha: </label>
+        <input type="password" id="ConfirmarSenha" name="ConfirmarSenha">
+        <br> <br>
+        <button type="submit">Enviar</button>
+        <p id="1"></p>
+    </form>
+
+    <script>
+        var form = document.querySelector("form")
+        var senha = document.getElementById("Senha")
+        var confirmarSenha = document.getElementById("ConfirmarSenha")
+        var mensagem = document.getElementById(1)
+
+    form.onsubmit = function (e){
+        if (senha.value.length < 8 ){
+            mensagem.textContent = mensagem.textContent + "A senha precisa ter no mínimo 8 caracteres";
+            e.preventDefault();
+        }
+
+        if (senha.value != confirmarSenha.value) {
+            mensagem.textContent = mensagem.textContent + "As senhas devem ser iguais";
+            e.preventDefault();
+        }
+    }
+    </script>
+</body>
+</html>

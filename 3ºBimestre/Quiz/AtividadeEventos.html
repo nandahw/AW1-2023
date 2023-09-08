@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz de JavaScript</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #db9393;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f3d0e4;
+            border-radius: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .option {
+            margin: 5px 0;
+        }
+
+        .submit-button {
+            background-color: #d07682;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tag {
+            display: none;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .correct {
+            background-color: #2ecc71;
+            color: #ffffff;
+        }
+
+        .incorrect {
+            background-color: #e74c3c;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Harry Potter</h1>
+
+        <div class="question">
+            <p>Pergunta 1: Quantos livros tem a saga completa?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q1" value="4"> 4 </label>
+                <label class="option"><input type="radio" name="q1" value="5"> 5 </label>
+                <label class="option"><input type="radio" name="q1" value="6"> 6 </label>
+                <label class="option"><input type="radio" name="q1" value="7"> 7 </label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <!-- Repita o mesmo padrão para as próximas questões -->
+
+        <div class="question">
+            <p>Pergunta 2: Qual o nome do ator que interpretou Severus Snape?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q2" value="tom"> Tom Felton </label>
+                <label class="option"><input type="radio" name="q2" value="alan"> Alan Rickman </label>
+                <label class="option"><input type="radio" name="q2" value="daniel"> Daniek Radcliffe </label>
+                <label class="option"><input type="radio" name="q2" value="james"> James Phelps </label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <!-- Repita o mesmo padrão para as próximas questões -->
+
+        <div class="question">
+            <p>Pergunta 3: Com quantos anos Harry foi para Hogwarts?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q3" value="13"> 13 anos </label>
+                <label class="option"><input type="radio" name="q3" value="12"> 12 anos </label>
+                <label class="option"><input type="radio" name="q3" value="11"> 11 anos </label>
+                <label class="option"><input type="radio" name="q3" value="10"> 10 anos </label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 4: Quem é o padrinho de Harry?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q4" value="sirius"> Sirius Black </label>
+                <label class="option"><input type="radio" name="q4" value="lupin"> Remus Lupin </label>
+                <label class="option"><input type="radio" name="q4" value="dumbledore"> Albus Dumbledore </label>
+                <label class="option"><input type="radio" name="q4" value="arthur"> Arthur Weasley </label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+
+        <div class="question">
+            <p>Pergunta 5: Quem colocou o nome de Harry no Cálice de Fogo?</p>
+            <div class="options">
+                <label class="option"><input type="radio" name="q5" value="voldemort"> Voldemort </label>
+                <label class="option"><input type="radio" name="q5" value="moody"> Moody </label>
+                <label class="option"><input type="radio" name="q5" value="barto"> Bartô Cronch Junior </label>
+                <label class="option"><input type="radio" name="q5" value="snape"> Severus Snape </label>
+            </div>
+            <button class="submit-button">Enviar</button>
+            <span class="tag correct">Correto!</span>
+            <span class="tag incorrect">Incorreto.</span>
+        </div>
+    </div>
+
+    <script>
+
+    const botoes = document.querySelectorAll("button");
+    var opcoes = document.querySelectorAll("input")
+
+    botoes.forEach((botao, index) => {
+        if (index != 0) {
+            botao.disabled = true
+            }
+    botao.addEventListener("click", () =>{
+        if(index===0){
+            const opcaoCorreta = document.querySelector('input[value="7"]');
+
+            if(opcaoCorreta.checked){
+                let correto = document.querySelectorAll(".correct")[index];
+
+                correto.style.display = "block";
+
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "none";
+                botao.disabled = true
+                botoes[index + 1].disabled = false;
+            } else{
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "block";
+
+                
+            }
+        }
+        if(index===1){
+            const opcaoCorreta = document.querySelector('input[value="alan"]');
+
+            if(opcaoCorreta.checked){
+                let correto = document.querySelectorAll(".correct")[index];
+
+                correto.style.display = "block";
+
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "none";
+                botao.disabled = true
+                botoes[index + 1].disabled = false
+            } else{
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "block";
+            }
+            
+        }
+        if(index===2){
+            const opcaoCorreta = document.querySelector('input[value="11"]');
+
+            if(opcaoCorreta.checked){
+                let correto = document.querySelectorAll(".correct")[index];
+
+                correto.style.display = "block";
+
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "none";
+                botao.disabled = true
+                botoes[index + 1].disabled = false
+            } else{
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "block";
+
+                
+            }
+        }
+        if(index===3){
+            const opcaoCorreta = document.querySelector('input[value="sirius"]');
+
+            if(opcaoCorreta.checked){
+                let correto = document.querySelectorAll(".correct")[index];
+
+                correto.style.display = "block";
+
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "none";
+                botao.disabled = true
+                botoes[index + 1].disabled = false
+            } else{
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "block";
+
+                
+            }
+        }
+        if(index===4){
+            const opcaoCorreta = document.querySelector('input[value="barto"]');
+
+            if(opcaoCorreta.checked){
+                let correto = document.querySelectorAll(".correct")[index];
+
+                correto.style.display = "block";
+
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "none";
+                botao.disabled = true
+                botoes[index + 1].disabled = false
+            } else{
+                let incorreto = document.querySelectorAll(".incorrect")[index];
+                incorreto.style.display = "block";
+
+                
+            }
+        }
+    })
+})
+
+    </script>
+</body>
+</html>

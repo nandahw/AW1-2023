@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="div1">
+    <h1> Nome:</h1>
+    <h3 id="nomes" class="nomes"></h3>
+    </div>
+
+    <div class="div2">
+    <h1> Idade: </h1>
+    <h3 id="idades" class="idade"></h3>
+    </div>
+
+    <div class="div3">
+    <h1> Sua idade no ano futuro: </h1>
+    <h3 id="anos" class="ano"></h3>
+    </div>
+
+
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Disciplina</th>
+            <th>Nota</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Português</td>
+            <td><p id="portugues" class="portu"></p></td>
+        </tr>
+        <tr>
+            <td>Matemática</td>
+            <td><p id="matematica" class="mat"></p></td>
+        </tr>
+        <tr>
+            <td>Desenvolvimento Web</td>
+            <td><p id="web" class="web"></p></td>
+        </tr>
+        </tbody>
+        <tfoot>
+            <td>Media geral</td>
+            <td><p id="media" class="media"></p></td>
+        </tfoot>
+     </table>
+
+    <script type="text/javascript">
+
+        var media, n1, n2, n3, x, anoFuturo;
+
+        var nome=prompt("Qual o seu nome?")
+        if (nome!=null)
+        {
+        x= nome;
+        document.getElementById("nomes").innerHTML=x;
+        }
+
+        var idade=prompt("Qual a sua idade?")
+        if (idade!=null)
+        {
+        x= idade + " anos.";
+        document.getElementById("idades").innerHTML=x;
+        }
+
+        var ano=prompt("Digite o ano que você nasceu:")
+
+        var futuro=prompt("Digite um ano futuro para saber a sua idade:")
+
+        var cor=prompt("Digite a sua cor favotita em inglês: ")
+        // if(cor!=null)
+        // {
+        //     x="Cor:" + cor;
+        //     document.getElementById("cores").innerHTML=x;
+        // }
+        
+        n1= prompt ("Qual foi a sua nota em Português? ") ;
+        n1= parseFloat (n1) ;
+        if(n1!=null)
+        {
+            x= n1;
+            document.getElementById("portugues").innerHTML=x;
+        }
+        
+        n2= prompt ("Qual foi sua nota em Matemática? ") ;
+        n2= parseFloat (n2) ;
+        if(n2!=null)
+        {
+            x= n2;
+            document.getElementById("matematica").innerHTML=x;
+        }
+        
+        n3= prompt ("Qual foi sua nota em Desenvolvimento WEB? ") ; 
+        n3= parseFloat (n3) ;
+        if(n3!=null)
+        {
+            x= n3;
+            document.getElementById("web").innerHTML=x;
+        }
+        
+        media = (n1 + n2 + n3)/3 ;
+        if(media!=null)
+        {
+            x= media.toFixed(1);
+            document.getElementById("media").innerHTML=x;
+        }
+
+        anoFuturo = (futuro - ano);
+        if(anoFuturo!=null)
+        {
+            x= anoFuturo + " anos.";
+            document.getElementById("anos").innerHTML=x;
+        }
+
+        // Função para exibir uma matriz 3x3
+        function exibirMatriz(matriz) {
+            document.write('<p>Matriz 3x3:</p>');
+            document.write('<table border="1">');
+            for (let i = 0; i < 3; i++) {
+                document.write('<tr>');
+                for (let j = 0; j < 3; j++) {
+                    document.write(`<td>${matriz[i][j]}</td>`);
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        }
+
+        // Receba 9 números separados por espaço e crie uma matriz 3x3
+        const inputNumbers = prompt("Digite 9 números separados por espaço:").split(' ').map(Number);
+
+        if (inputNumbers.length === 9) {
+            const matriz3x3 = [];
+            let index = 0;
+            for (let i = 0; i < 3; i++) {
+                matriz3x3.push([]);
+                for (let j = 0; j < 3; j++) {
+                    matriz3x3[i].push(inputNumbers[index]);
+                    index++;
+                }
+            }
+            exibirMatriz(matriz3x3);
+        } else {
+            document.write('<p>Por favor, digite 9 números separados por espaço.</p>');
+        }
+
+        </script>
+</body>
+</html>
